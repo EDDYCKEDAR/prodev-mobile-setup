@@ -1,102 +1,44 @@
-import { Text, View, StyleSheet, Image, ImageBackground, Dimensions, TouchableOpacity } from "react-native";
-import { SafeAreaView, SafeAreaProvider } from "react-native-safe-area-context";
+import React from 'react';
+import { View, Text, StyleSheet } from 'react-native';
 
-export default function Index() {
+export default function App() {
   return (
-    <SafeAreaProvider>
-      <SafeAreaView style={{ flex: 1 }}>
-        <ImageBackground
-          source={require("@/assets/images/background-image.png")}
-          style={styles.background}
-          resizeMode="cover"
-        >
-          <View style={styles.container}>
-            {/* Company Logo */}
-            <View style={styles.companyLogo}>
-              <Image source={require("@/assets/images/Logo.png")} />
-            </View>
+    <View style={styles.container}>
+      <Text>Entry Screen - Awesome</Text>
 
-            {/* Texts */}
-            <View style={styles.textGroup}>
-              <Text style={styles.textLarge}>Find your favorite place here</Text>
-              <Text style={styles.textSmall}>The best prices for over 2</Text>
-              <Text style={styles.textSmall}>million properties worldwide</Text>
-            </View>
+      <Text style={styles.largeText}>Typescript is great if you practice more</Text>
+      <Text style={styles.mediumText}>React Native provides you a single codebase for cross platforms</Text>
+      <Text style={styles.smallText}>ALX is awesome</Text>
 
-            {/* Buttons + Navigation Prompt */}
-            <View style={{ position: "absolute", bottom: 0, width: "100%" }}>
-              <View style={styles.buttonGroup}>
-                <TouchableOpacity style={styles.button}>
-                  <Text style={{ ...styles.textSmall, color: "black" }}>Join here</Text>
-                </TouchableOpacity>
-
-                <TouchableOpacity style={styles.transparentButton}>
-                  <Text style={styles.textSmall}>Sign In</Text>
-                </TouchableOpacity>
-              </View>
-              <View style={{ alignItems: "center", paddingVertical: 20 }}>
-                <Text style={{ color: "white" }}>Continue to home</Text>
-              </View>
-            </View>
-          </View>
-        </ImageBackground>
-      </SafeAreaView>
-    </SafeAreaProvider>
+      <Text style={styles.textSmall}>The best prices for over 2 </Text>
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1 },
-  background: {
+  container: {
     flex: 1,
-    justifyContent: "center",
-    width: "100%",
-    height: Dimensions.get("window").height,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#fff',
   },
-  companyLogo: {
-    width: "100%",
-    alignItems: "center",
-    padding: 20,
-    marginBottom: 50,
+  largeText: {
+    fontSize: 24,
+    fontWeight: 'bold',
+    marginTop: 10,
   },
-  textGroup: { alignItems: "center" },
-  textLarge: {
-    color: "white",
-    fontWeight: "800",
-    fontSize: 40,
-    textAlign: "center",
-    marginBottom: 12,
+  mediumText: {
+    fontSize: 18,
+    marginTop: 10,
+  },
+  smallText: {
+    fontSize: 14,
+    fontStyle: 'italic',
+    marginTop: 10,
   },
   textSmall: {
-    color: "white",
-    fontSize: 18,
-    fontWeight: "200",
-    textAlign: "center",
-  },
-  transparentButton: {
-    borderColor: "white",
-    borderWidth: 2,
-    borderRadius: 40,
-    paddingVertical: 15,
-    paddingHorizontal: 5,
-    alignItems: "center",
-    fontSize: 20,
-    flex: 1,
-  },
-  button: {
-    borderColor: "white",
-    borderWidth: 2,
-    borderRadius: 40,
-    paddingVertical: 15,
-    paddingHorizontal: 5,
-    alignItems: "center",
-    fontSize: 20,
-    backgroundColor: "white",
-    flex: 1,
-  },
-  buttonGroup: {
-    flexDirection: "row",
-    gap: 20,
-    paddingHorizontal: 20,
+    fontSize: 12,
+    color: '#333',
+    marginTop: 10,
   },
 });
